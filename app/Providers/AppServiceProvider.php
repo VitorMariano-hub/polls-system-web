@@ -19,6 +19,15 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        if (env('APP_ENV') === 'production') {
+            // Força todas as URLs geradas pelo Laravel a usarem HTTPS
+            URL::forceScheme('https');
+    
+            // Configura Laravel para confiar no proxy (como Railway)
+            Request::setTrustedProxies(
+                [Request::getClientIp()],
+                \Illuminate\Http\Request::HEADER_X_FORWARDED_ALL
+            );
+        }
     }
 }
