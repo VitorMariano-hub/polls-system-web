@@ -49,14 +49,15 @@ Sistema de enquetes online desenvolvido com Laravel, onde um administrador pode 
 
 
 🌐 Deploy
+
 O projeto está disponível em produção:
 https://polls-system-web-production.up.railway.app
 
 👤 Autor
+
 Desenvolvido por Vitor Mariano
 📧 Email: vitorma1992@gmail.com
 
 ## 📸 Screenshots
 
-![Página de login](public/images/loginView.png)
-![Tela de votação](public/images/votesView.png)
+![Tela de votação](https://i.imgur.com/vMwCala.png)
