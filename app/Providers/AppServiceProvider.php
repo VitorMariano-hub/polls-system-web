@@ -27,8 +27,8 @@ class AppServiceProvider extends ServiceProvider
     
             // Configura Laravel para confiar no proxy (como Railway)
             Request::setTrustedProxies(
-                [Request::getClientIp()],
-                \Illuminate\Http\Request::HEADER_X_FORWARDED_ALL
+                ['*'], // Aceita qualquer proxy, útil em plataformas como Railway ou Heroku
+                Request::HEADER_X_FORWARDED_ALL
             );
         }
     }
