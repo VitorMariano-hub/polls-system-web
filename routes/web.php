@@ -13,3 +13,10 @@ Route::get('/polls/{poll}', [PollController::class, 'show'])->name('polls.show')
 Route::post('/polls/vote', [PollVoteController::class, 'store'])->name('polls.vote');
 Route::delete('/polls/{poll}', [PollController::class, 'destroy'])->middleware('auth')->name('polls.destroy');
 
+Route::get('/clear-config', function () {
+    Artisan::call('config:clear');
+    Artisan::call('cache:clear');
+    Artisan::call('route:clear');
+    Artisan::call('config:cache');
+    return 'Configs limpas e recacheadas!';
+});
