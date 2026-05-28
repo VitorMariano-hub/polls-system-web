@@ -5,7 +5,14 @@
         <div class="col-md-8">
             <div class="card shadow-sm border-0">
                 <div class="card-body">
-                    <h3 class="card-title fw-semibold mb-4 text-primary">{{ $poll->question }}</h3>
+                    <h3 class="card-title fw-semibold mb-4 text-primary d-flex align-items-center gap-2 flex-wrap">
+                        {{ $poll->question }}
+                        @if($poll->is_verified)
+                            <span class="badge bg-success-subtle text-success border border-success-subtle rounded-pill fs-6" style="font-size: 0.8rem;">
+                                🌟 Verificada
+                            </span>
+                        @endif
+                    </h3>
 
                     <form action="{{ route('polls.vote') }}" method="POST">
                         @csrf

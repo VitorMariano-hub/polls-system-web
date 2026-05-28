@@ -3,16 +3,17 @@
 @section('content')
 <div class="d-flex justify-content-center align-items-center" style="min-height: 70vh;">
     <div class="card shadow-sm p-4" style="width: 100%; max-width: 400px;">
-        <h4 class="mb-4 text-center">Login no sistema</h4>
+        <img src="{{ asset('favicon.png') }}" alt="" class="mb-4 mx-auto" style="width: 50px;">
+        <h4 class="mb-4 text-center fw-bold">Login - Painel Admin</h4>
 
         @if ($errors->any())
-            <div class="alert alert-danger">
-                <ul class="mb-0">
-                    @foreach ($errors->all() as $error)
-                        <li class="small">{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
+        <div class="alert alert-danger">
+            <ul class="mb-0">
+                @foreach ($errors->all() as $error)
+                <li class="small">{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
         @endif
 
         <form method="POST" action="{{ route('login') }}">

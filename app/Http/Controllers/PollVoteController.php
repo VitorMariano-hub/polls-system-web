@@ -18,7 +18,7 @@ class PollVoteController extends Controller
         $identifier = auth()->check() ? auth()->id() : $request->ip();
 
         $alreadyVoted = PollVote::verifyAlreadyVoted($identifier, $request->poll_id);
-        
+
         if ($alreadyVoted) {
             return back()->with('error', 'Você já votou nesta enquete.');
         }

@@ -9,7 +9,7 @@ class Poll extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['question', 'user_id'];
+    protected $fillable = ['question', 'user_id', 'is_verified'];
 
     public function answers()
     {

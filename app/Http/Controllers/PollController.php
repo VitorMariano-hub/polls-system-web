@@ -43,7 +43,7 @@ class PollController extends Controller
             ]);
         }
 
-        return redirect()->route('polls.index')->with('success', 'Enquete criada com sucesso!');
+        return redirect()->route('admin.dashboard')->with('success', 'Enquete criada com sucesso!');
     }
 
     public function show(Poll $poll)
